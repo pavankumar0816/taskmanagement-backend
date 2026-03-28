@@ -1,0 +1,53 @@
+info: MongoDb Connected
+info: Admin already exists
+info: Login Success: admin@gmail.com
+
+error: Authorization header missing
+
+error: You are not having access, Please contact to Admin
+
+info: MongoDb Connected
+info: Admin Created
+
+info: MongoDb Connected
+info: Admin already exists
+error: userId is not defined
+error: Authorization header missing
+info: MongoDb Connected
+info: Admin already exists
+info: MongoDb Connected
+info: Admin already exists
+info: Login Success: admin@gmail.com
+error: Operation `users.findOne()` buffering timed out after 10000ms
+error: DB Connection failed
+error: DB Connection failed
+info: MongoDb Connected
+info: Admin already exists
+info: Login Success: admin@gmail.com
+info: Login Success: admin@gmail.com
+info: Login Success: sai@gmail.com
+info: MongoDb Connected
+info: Admin already exists
+info: MongoDb Connected
+info: Admin already exists
+info: Login Success: admin@gmail.com
+info: MongoDb Connected
+info: Admin already exists
+info: MongoDb Connected
+info: Admin already exists
+info: Login Success: admin@gmail.com
+info: User Registered pmpk@gmail.com
+info: User Registered pmpk@gmail.com
+info: User Registered pmpk@gmail.com
+info: User Registered pmpk@gmail.com
+info: Login Success: admin@gmail.com
+info: MongoDb Connected
+info: Admin already exists
+info: MongoDb Connected
+info: Admin already exists
+info: MongoDb Connected
+info: Admin already exists
+info: Login Success: pa1@gmail.com
+info: Login Success: admin@gmail.com
+info: Login Success: admin@gmail.com
+info: Login Success: pa1@gmail.com

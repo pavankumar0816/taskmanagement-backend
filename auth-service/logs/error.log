@@ -1,0 +1,13 @@
+error: Authorization header missing
+error: exists is not defined
+error: exists is not defined
+error: Authorization header missing
+error: uuidv4 is not defined
+error: uuidv4 is not defined
+error: uuidv4 is not defined
+error: Illegal arguments: undefined, string
+error: Illegal arguments: undefined, string
+error: Illegal arguments: undefined, string
+error: Operation `users.findOne()` buffering timed out after 10000ms
+error: DB Connection failed
+error: DB Connection failed
