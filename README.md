@@ -1,11 +1,9 @@
 ## Task Management Backend
-===========================
 The Task Management Backend is a microservices-based application designed to manage users, projects, tasks, and teams efficiently.
 
 The system is divided into 5 independent microservices, where each service handles its own functionality, APIs, and database.
 
 ## Microservices Overview
---------------------------
 🔐 **Auth Service**
 Handles authentication, JWT token generation, and security<br> 
 
@@ -22,21 +20,18 @@ Manages task creation, updates, and assignment<br>
 Handles team creation and assigning members<br>
 
 ## User Roles
---------------
-- **Admin:** Creates Managers and Employees , Manages teams<br>
-- **Manager:** Creates projects and tasks , Manages assigned employees<br>
-- **Employee:** Views and updates assigned tasks<br>
+- **Admin:** Creates Managers and Employees , Manages teams
+- **Manager:** Creates projects and tasks , Manages assigned employees
+- **Employee:** Views and updates assigned tasks
 
 ## 🛠️ Tech Stack
-------------------
-- Backend: Node.js, Express.js<br>
-- Database: MongoDB (separate DB per service)<br>
-- Authentication: JWT<br>
-- Logging: Winston<br>
-- Request Logging: Morgan<br>
+- Backend: Node.js, Express.js 
+- Database: MongoDB (separate DB per service)
+- Authentication: JWT
+- Logging: Winston
+- Request Logging: Morgan
 
  ## 🔐 Security & Architecture
------------------------------
 RBAC (Role-Based Access Control) implemented across all services
 JWT Authentication for secure communication<br>
 Each service:  
@@ -45,7 +40,6 @@ Each service:
 - Runs independently
 
 ## Inter-Service Communication
---------------------------------
 Services communicate via REST APIs (Axios)<br>
 Example:<br>
 Task Service → User Service (validate employee)<br>
@@ -54,7 +48,6 @@ Team Service → User Service (validate members)<br>
 JWT token is shared across services for authentication<br>
 
 ## 📁 Project Structure
----------------------------
 ```
 taskmanagement-backend/
 │
@@ -68,7 +61,6 @@ taskmanagement-backend/
 ```
 
 ## Key Highlights
-------------------
 - Microservices architecture
 - Scalable and modular design
 - Secure authentication and authorization
@@ -82,7 +74,6 @@ taskmanagement-backend/
 - Scalable and maintainable system design
 
 ## Architecture Diagram
---------------------------
 ```
                 ┌──────────────────────┐
                 │      Client (UI)     │

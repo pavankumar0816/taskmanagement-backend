@@ -1,9 +1,8 @@
 ## 🔐 Auth Service: Acts as the security layer of the application
 
-The **Auth Service** is one of the core microservices in the Task Management Project. It is responsible for handling user authentication, authorization, and secure token generation using JWT.
+The **Auth Service** is one of the core microservices in the **Task Management Project**. It is responsible for handling user authentication, authorization, and secure token generation using JWT.
 
 ## Features
-------------
 - User authentication (login & validation)
 - Secure password hashing using bcrypt
 - JWT token generation and verification
@@ -12,26 +11,22 @@ The **Auth Service** is one of the core microservices in the Task Management Pro
 - CORS enabled for cross-origin requests
 
 ## 🛠️ Tech Stack
-------------------
-Backend: Node.js, Express.js<br>
-Database: MongoDB<br>
-Authentication: JSON Web Token (JWT)<br>
-Password Hashing: bcryptjs<br>
-Logging: Winston<br>
-Request Logging: Morgan<br>
+**Backend**: Node.js, Express.js<br>
+**Database**: MongoDB<br>
+**Authentication**: JSON Web Token (JWT)<br>
+**Password Hashing**: bcryptjs<br>
+**Logging**: Winston<br>
+**Request** Logging: Morgan<br>
 
 ## JWT Authentication
------------------------
 - JWT is used to generate secure tokens after successful login.
 - These tokens are used to authenticate protected routes.
 - Tokens are typically sent in headers (Authorization: Bearer <token>).
 
 ## Default Admin Seeding
---------------------------
 When the Auth Service starts, a default admin user is automatically created (if not already present).
 
 ## Middleware Used
--------------------
 1. CORS
 Enables cross-origin requests
 Allows frontend and backend to communicate securely
@@ -39,13 +34,11 @@ Allows frontend and backend to communicate securely
 Logs HTTP request details in the console
 Useful for debugging API calls
 3. Winston
-Used for structured logging<br>
-**Maintains:**
+Used for structured logging, It maintains:<br>
 - Application logs
 - Error logs
 
 ## 📁 Project Structure
--------------------------
 ```
 auth-service/
 │
@@ -81,7 +74,7 @@ auth-service/
 └── README.md
 ```
 
-**How to Run**
+## How to Run
 
 Install dependencies:
 npm install<br>
