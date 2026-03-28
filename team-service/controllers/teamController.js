@@ -1,6 +1,7 @@
 const Team = require("../models/team");
 const TeamMember = require("../models/teamMember")
 const axios = require("axios")
+const USER_SERVICE = process.env.USER_SERVICE
 
 const createTeam = async(req,res) => {
    try
@@ -35,7 +36,7 @@ const viewTeams = async(req, res) => {
        const teams = await Team.find({}, "teamId teamName createdBy");
        if(teams.length === 0)
        {
-          return res.status(400).json({message: "Teams were not exists"}); 
+          return res.status(404).json({message: "No Teams found"}); 
        }
        res.json({message: "Teams", data: teams});
  }
@@ -46,7 +47,7 @@ const viewTeams = async(req, res) => {
 }
 
 
-const AssignteamMembers = async(req, res) => {
+const assignTeamMembers = async(req, res) => {
     try
     {
         const {teamId, authId, teamRole} = req.body;
@@ -62,7 +63,7 @@ const AssignteamMembers = async(req, res) => {
             return res.status(400).json({message: "This team not belongs to you"});
         }
         
-        const userResponse = await axios.get(`http://localhost:2001/users/${authId}`, {
+        const userResponse = await axios.get(`${USER_SERVICE}/${authId}`, {
             headers:{
                 Authorization: req.headers.authorization
             }
@@ -72,6 +73,10 @@ const AssignteamMembers = async(req, res) => {
         if(!user)
         {
             return res.status(404).json({message: "User not found"})
+        }
+
+        if (!["team_manager", "team_member"].includes(teamRole)) {
+            return res.status(400).json({ message: "Invalid team role" });
         }
 
         if(teamRole === "team_member")
@@ -110,14 +115,16 @@ const AssignteamMembers = async(req, res) => {
 const viewTeamMembers = async(req, res) => {
     try
     {
-        const team = await Team.findOne({})
-        console.log(team.teamName)
-        const teamId = team.teamId;
+        const { teamId } = req.params;
 
-        const teamMembers = await TeamMember.find({teamId: teamId}, "authId teamId teamRole" )
+        if (!teamId) {
+        return res.status(400).json({ message: "teamId is required" });
+    }
+
+        const teamMembers = await TeamMember.find({teamId}, "authId teamId teamRole" );
         if(teamMembers.length === 0)
         {
-            return res.status(400).json({message: "Team members were not exist"})
+            return res.status(404).json({message: "No team members found"})
         }
         res.json({message: "Team members", data: teamMembers})
     }
@@ -127,4 +134,4 @@ const viewTeamMembers = async(req, res) => {
     }
 }
 
-module.exports = {createTeam, viewTeams, AssignteamMembers, viewTeamMembers};
+module.exports = {createTeam, viewTeams, assignTeamMembers, viewTeamMembers};

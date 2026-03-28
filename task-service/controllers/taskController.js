@@ -1,5 +1,7 @@
 const Task = require("../models/task");
 const axios = require("axios");
+const USER_SERVICE = process.env.USER_SERVICE
+const PROJECT_SERVICE = process.env.PROJECT_SERVICE
 
 const createTask = async (req,res) => {
   try
@@ -19,13 +21,13 @@ const createTask = async (req,res) => {
       return res.status(400).json({message: "Start time must be before end time"});
     }
 
-    const response = await axios.get(`http://localhost:2001/users/${assignTo}`,{
+    const response = await axios.get(`${USER_SERVICE}/${assignTo}`,{
       headers:{
         Authorization: req.headers.authorization
       }
     })
 
-    const projectResponse = await axios.get(`http://localhost:2002/projects/${projectId}`,{
+    const projectResponse = await axios.get(`${PROJECT_SERVICE}/${projectId}`,{
       headers:{
         Authorization: req.headers.authorization
       }

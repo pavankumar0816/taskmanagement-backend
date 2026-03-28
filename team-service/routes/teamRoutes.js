@@ -7,8 +7,8 @@ const teamRouter = express.Router();
 
 teamRouter.post("/create-team", verifyToken, authorize("admin"), teamController.createTeam);
 teamRouter.get("/viewteams", verifyToken, authorize("admin"), teamController.viewTeams);
-teamRouter.post("/assign-team-members", verifyToken, authorize("admin"), teamController.AssignteamMembers);
+teamRouter.post("/assign-team-members", verifyToken, authorize("admin"), teamController.assignTeamMembers);
 
-teamRouter.get("/view-team-members", verifyToken, authorize("admin","manager"), teamController.viewTeamMembers);
+teamRouter.get("/view-team-members/:teamId", verifyToken, authorize("admin","manager"), teamController.viewTeamMembers);
 
 module.exports = teamRouter;

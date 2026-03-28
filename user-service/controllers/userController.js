@@ -2,7 +2,7 @@ const User = require("../models/user");
 const getNextSequence = require("../utils/sequence");
 const logger = require("../utils/logger");
 const axios = require("axios");
-
+const AUTH_SERVICE = process.env.AUTH_SERVICE
 
 const createManager =async (req,res) => {
  try
@@ -21,7 +21,7 @@ const createManager =async (req,res) => {
     }
 
     const generatedPassword = "Manager@123";
-    const response = await axios.post("http://localhost:2026/auth/register", {
+    const response = await axios.post(`${AUTH_SERVICE}/register`, {
       name,
       email,
       password:generatedPassword,
@@ -86,7 +86,7 @@ const createEmployee = async (req,res) => {
             return res.status(400).json({message: "Invalid manager"});
         }
         const tempPassword = "Employee@123";
-        const response = await axios.post("http://localhost:2026/auth/register",{
+        const response = await axios.post(`${AUTH_SERVICE}/register`, {
             name,
             email,
             password:tempPassword,
