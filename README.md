@@ -1,60 +1,61 @@
-**Task Management Backend**
+## Task Management Backend
 ===========================
 The Task Management Backend is a microservices-based application designed to manage users, projects, tasks, and teams efficiently.
 
 The system is divided into 5 independent microservices, where each service handles its own functionality, APIs, and database.
 
-**Microservices Overview**
+## Microservices Overview
 --------------------------
 🔐 **Auth Service**
-Handles authentication, JWT token generation, and security
+Handles authentication, JWT token generation, and security<br> 
 
 👥 **User Service**
-Manages users (Admin, Manager, Employee) and their data
+Manages users (Admin, Manager, Employee) and their data<br>
 
 📁 **Project Service**
-Handles project creation and management
+Handles project creation and management<br>
 
 📝 **Task Service**
-Manages task creation, updates, and assignment
+Manages task creation, updates, and assignment<br>
 
 👨‍👩‍👧‍👦 **Team Service**
-Handles team creation and assigning members
+Handles team creation and assigning members<br>
 
-**User Roles**
+## User Roles
 --------------
-Admin: Creates Managers and Employees , Manages teams
-Manager: Creates projects and tasks , Manages assigned employees
-Employee: Views and updates assigned tasks
+- **Admin:** Creates Managers and Employees , Manages teams<br>
+- **Manager:** Creates projects and tasks , Manages assigned employees<br>
+- **Employee:** Views and updates assigned tasks<br>
 
-🛠️ **Tech Stack**
+## 🛠️ Tech Stack
 ------------------
-Backend: Node.js, Express.js
-Database: MongoDB (separate DB per service)
-Authentication: JWT
-Logging: Winston
-Request Logging: Morgan
+- Backend: Node.js, Express.js<br>
+- Database: MongoDB (separate DB per service)<br>
+- Authentication: JWT<br>
+- Logging: Winston<br>
+- Request Logging: Morgan<br>
 
-🔐 **Security & Architecture**
+ ## 🔐 Security & Architecture
 -----------------------------
 RBAC (Role-Based Access Control) implemented across all services
-JWT Authentication for secure communication
-Each service:
-Has its own APIs
-Has its own database
-Runs independently
+JWT Authentication for secure communication<br>
+Each service:  
+- Has its own APIs
+- Has its own database
+- Runs independently
 
-**Inter-Service Communication**
+## Inter-Service Communication
 --------------------------------
-Services communicate via REST APIs (Axios)
-Example:
-Task Service → User Service (validate employee)
-Task Service → Project Service (validate project)
-Team Service → User Service (validate members)
-JWT token is shared across services for authentication
+Services communicate via REST APIs (Axios)<br>
+Example:<br>
+Task Service → User Service (validate employee)<br>
+Task Service → Project Service (validate project)<br>
+Team Service → User Service (validate members)<br>
+JWT token is shared across services for authentication<br>
 
-📁 **Project Structure**
+## 📁 Project Structure
 ---------------------------
+```
 taskmanagement-backend/
 │
 ├── auth-service/
@@ -64,24 +65,25 @@ taskmanagement-backend/
 ├── team-service/
 │
 └── README.md
+```
 
-**Key Highlights**
+## Key Highlights
 ------------------
-Microservices architecture
-Scalable and modular design
-Secure authentication and authorization
-Real-time validation using inter-service API calls
-Clean separation of concerns
+- Microservices architecture
+- Scalable and modular design
+- Secure authentication and authorization
+- Real-time validation using inter-service API calls
+- Clean separation of concerns
 
 **This project demonstrates:**
-Real-world microservices architecture
-Secure backend development using JWT & RBAC
-Proper service-to-service communication
-Scalable and maintainable system design
+- Real-world microservices architecture
+- Secure backend development using JWT & RBAC
+- Proper service-to-service communication
+- Scalable and maintainable system design
 
-**Architecture Diagram**
+## Architecture Diagram
 --------------------------
-
+```
                 ┌──────────────────────┐
                 │      Client (UI)     │
                 └─────────┬────────────┘
@@ -104,5 +106,5 @@ Scalable and maintainable system design
                 │    Task Service      │
                 │ (Tasks Management)   │
                 └──────────────────────┘
-
+```
                 
