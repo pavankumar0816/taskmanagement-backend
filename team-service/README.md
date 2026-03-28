@@ -1,51 +1,40 @@
-**Team Service**
-The Team Service is a microservice responsible for managing teams and assigning members (Managers and Employees) to teams.
+## 👥 Team Service
+The **Team Service** is a microservice responsible for managing teams and assigning members (Managers and Employees) to teams.
 
-**Features**
------------
-Create teams (Admin only)
-View all teams (Admin only)
-Assign team members (Admin only)
-View team members (Admin & Manager)
-Role-based access control
-JWT-based authentication integration
+## Features
+- Create teams (Admin only)
+- View all teams (Admin only)
+- Assign team members (Admin only)
+- View team members (Admin & Manager)
+- Role-based access control
+- JWT-based authentication integration
 
-🛠️ **Tech Stack**
------------------
-Backend: Node.js, Express.js
-Database: MongoDB
-Authentication: JWT (integrated with Auth Service)
+## 🛠️ Tech Stack
+**Backend**: Node.js, Express.js<br>
+**Database**: MongoDB<br>
+**Authentication**: JWT (integrated with Auth Service)<br>
 
 
-🔐 **Authorization Logic**
--------------------------
-Admin
-Can create teams
-Can assign members to teams
-Can view teams
-Manager
-Can view team members
+## 🔐 Authorization Logic
+**Admin**: Can create teams , Can assign members to teams , Can view teams<br>
+**Manager**: Can view team members<br>
+
 All routes are protected using JWT verification
 
-**Inter-Service Communication**
-------------------------------
-Calls **User Service** to:
-Verify user exists
-Get user role and manager details
-Ensures:
-Only valid users are added to teams
-Employee’s manager is part of the same team
-JWT token is forwarded for secure communication
+## Inter-Service Communication
+Calls **User Service** to: Verify user exists , Get user role and manager details<br>
+Ensures: Only valid users are added to teams<br>
+Employee’s manager is part of the same team<br>
+JWT token is forwarded for secure communication<br>
 
-**Core Responsibilities**
-------------------------
-Manage team creation
-Assign users (manager/employee) to teams
-Maintain team-member relationships
-Validate data using other services
+## Core Responsibilities 
+- Manage team creation
+- Assign users (manager/employee) to teams
+- Maintain team-member relationships
+- Validate data using other services
 
-📁 **Project Structure**
-------------------------
+## 📁 Project Structure
+```
 team-service/
 │
 ├── config/              # Database configuration
@@ -63,17 +52,16 @@ team-service/
 │
 ├── server.js
 └── README.md
+```
 
-
-**How to Run**
-
+## How to Run
 Install dependencies:
-npm install
+npm install<br>
 
-Add environment variables (.env):
-PORT=5001
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
+Add environment variables (.env):<br>
+- PORT=5000
+- MONGO_URI=your_mongodb_connection
+- JWT_SECRET=your_secret_key<br>
 
-**Start the service:**
+**Start the service:**<br>
 npm start

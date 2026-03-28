@@ -1,4 +1,4 @@
-## 📁Project Service
+## 📁 Project Service
 The **Project Service** is a dedicated microservice in the **Task Management System** responsible for managing project-related operations.
 
 It primarily handles project creation and retrieval, ensuring that only authorized users (Managers) can create projects.

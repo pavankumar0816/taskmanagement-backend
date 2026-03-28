@@ -1,35 +1,27 @@
-**User Service**
+## 👤 User Service
 
-The User Service is a microservice responsible for managing users in the system, including Admins, Managers, and Employees.
-
+The **User Service** is a microservice responsible for managing users in the system, including Admins, Managers, and Employees.<br>
 It handles user creation and CRUD operations with proper role-based access control.
 
-**Features**
------------
-Create Manager and Employee (Admin only)
-View all users (Admin only)
-Get user details by Auth ID
-Role-based access control
-JWT-based authentication integration
+## Features
+- Create Manager and Employee (Admin only)
+- View all users (Admin only)
+- Get user details by Auth ID
+- Role-based access control
+- JWT-based authentication integration
 
-🛠️ **Tech Stack**
------------------
-Backend: Node.js, Express.js
-Database: MongoDB
-Authentication: JWT (integrated with Auth Service)
+## 🛠️ Tech Stack
+**Backend**: Node.js, Express.js<br>
+**Database**: MongoDB<br>
+**Authentication**: JWT (integrated with Auth Service)<br>
 
-🔐 **Authorization Logic**
--------------------------
-**Admin**
-Can create Managers and Employees
-Can view all users
-
-**Manager**
-Can view user details (employees)
+## 🔐 Authorization Logic
+**Admin**: Can create Managers and Employees , Can view all users <br>
+**Manager** : Can view user details (employees)<br>
 All routes are protected using JWT verification
 
-📁**Project Structure**
------------------------
+## 📁 Project Structure 
+```
 user-service/
 │
 ├── config/              # Database configuration
@@ -44,16 +36,16 @@ user-service/
 │
 ├── server.js
 └── README.md
+```
 
-**How to Run**
-
+## How to Run
 Install dependencies:
-npm install
+npm install<br>
 
-Add environment variables (.env):
-PORT=5001
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
+Add environment variables (.env):<br>
+- PORT=5000
+- MONGO_URI=your_mongodb_connection
+- JWT_SECRET=your_secret_key<br>
 
-**Start the service:**
+**Start the service:**<br>
 npm start
