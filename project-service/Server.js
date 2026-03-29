@@ -5,9 +5,12 @@ const helmet = require("helmet")
 const morgan = require("morgan")
 const connectDB = require("./config/db")
 const projectRoutes = require("./routes/projectRoutes")
-
+const cors = require("cors");
 
 const app = express()
+app.use(cors({
+    origin: "http://localhost:5173"
+}))
 
 //security header
 app.use(helmet())
@@ -24,7 +27,7 @@ app.use("/projects", projectRoutes)
 //DB Connection
 connectDB();
 
-const port = process.env.PORT || 2001;
+const port = process.env.PORT || 2002;
 app.listen(port, () => {
-    console.log(`User Service running on ${port}`);
+    console.log(`Project Service running on ${port}`);
 });

@@ -3,11 +3,10 @@ const axios = require("axios");
 
 const createProject = async (req,res) => {
    try
-   {  
-       console.log(req.user);
+   {   
       const {name, description} = req.body;
-
-         if(!name)
+       console.log("Name =" + req.body.name);
+         if(!name )
          {
              return res.status(400).json({message: "Required fields missing"});
          }
@@ -24,7 +23,10 @@ const createProject = async (req,res) => {
    catch(err)
    {
       console.log(err)
-         res.status(500).json({ message: "Failed to create project" });
+      if (err.code === 11000) {
+      return res.status(400).json({message: "Project with this name already exists" });
+  }
+      res.status(500).json({ message: "Failed to create project" });
    }
 }
 
